@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="https://cloudflare.com">
 
 <style>
-  /* Черно-фиолетовый неон + анимация фона */
   body {
     margin: 0;
     padding: 0;
@@ -40,71 +39,29 @@
   .line-3 { left: 75%; animation-duration: 7s; animation-delay: 4s; }
   .line-4 { left: 90%; animation-duration: 11s; animation-delay: 1s; }
 
-  @keyframes drop {
-    0% { top: -200px; }
-    100% { top: 100%; }
-  }
+  @keyframes drop { 0% { top: -200px; } 100% { top: 100%; } }
 
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  .container { max-width: 800px; margin: 0 auto; padding: 20px; }
 
   .header {
     text-align: center;
-    padding: 20px 30px;
+    padding: 40px 20px;
     background: rgba(13, 13, 20, 0.85) !important;
     border-radius: 16px;
     margin-bottom: 30px;
     border: 1px solid #1f1235 !important; 
     box-shadow: 0 0 20px rgba(138, 43, 226, 0.15) !important;
     backdrop-filter: blur(5px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
   }
 
-  .logo-area h1 {
-    margin: 0;
-    font-size: 1.8rem;
+  .header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.2rem;
     color: #fff !important;
     text-shadow: 0 0 10px rgba(138, 43, 226, 0.5) !important;
   }
 
-  .stats-widgets {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .balance-box {
-    background-color: #050508;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: 1px solid #8a2be2;
-    box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
-    font-weight: bold;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .coin-icon { color: #f39c12; }
-
-  /* Основная сетка */
-  .main-grid {
-    display: grid;
-    grid-template-columns: 2.2fr 1fr;
-    gap: 20px;
-  }
-
-  @media (max-width: 768px) {
-    .main-grid { grid-template-columns: 1fr; }
-  }
+  .subtitle { color: #a78bfa !important; margin-bottom: 25px; }
 
   .card {
     background-color: rgba(13, 13, 20, 0.85) !important;
@@ -115,120 +72,74 @@
     margin-bottom: 20px;
   }
 
-  /* Стили ОДНОГО ЭПИЧЕСКОГО КЕЙСА */
-  .case-zone-center {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-
-  .case-card-huge {
-    background: linear-gradient(135deg, #130f26, #07050f);
-    border: 2px solid #8a2be2;
-    box-shadow: 0 0 25px rgba(138, 43, 226, 0.4);
-    border-radius: 16px;
-    padding: 30px;
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    transition: transform 0.2s;
-  }
-
-  .case-card-huge:hover {
-    transform: scale(1.02);
-  }
-
-  .case-icon-huge {
-    font-size: 70px;
-    margin-bottom: 15px;
-    display: block;
-    animation: pulse 2s infinite alternate;
-  }
-
-  @keyframes pulse {
-    0% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(138,43,226,0.4)); }
-    100% { transform: scale(1.08); filter: drop-shadow(0 0 20px rgba(138,43,226,0.8)); }
-  }
-
-  .case-price-tag {
-    font-size: 1.4rem;
-    color: #f39c12;
-    font-weight: bold;
-    margin: 15px 0;
-    text-shadow: 0 0 10px rgba(243, 156, 18, 0.4);
-  }
-
-  /* Зона рулетки */
-  .roulette-zone {
-    background: #050508;
-    border: 2px dashed #4c1d95;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 25px;
-    text-align: center;
-    display: none; 
-    box-shadow: 0 0 15px rgba(138, 43, 226, 0.2) inset;
-  }
-
-  .drop-display {
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin: 15px 0;
-    color: #fff;
-    text-shadow: 0 0 15px rgba(255,255,255,0.4);
-  }
-
-  /* Таблица лидеров */
-  .leaderboard-list { list-style: none; padding: 0; margin: 15px 0 0 0; }
-  .leaderboard-item { display: flex; justify-content: space-between; padding: 12px 15px; border-bottom: 1px solid #1f1235; font-size: 0.95rem; }
-  .leaderboard-item:last-child { border-bottom: none; }
-  .leaderboard-item.top-1 { color: #f39c12; font-weight: bold; text-shadow: 0 0 5px rgba(243,156,18,0.3); }
-
-  /* Инвентарь */
-  .inventory-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 8px;
-    margin-top: 15px;
-    max-height: 250px;
-    overflow-y: auto;
-    padding-right: 5px;
-  }
-
-  .inv-item {
-    background: #0d0d14;
-    border: 1px solid #2d1b4e;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-  }
-
   .btn-primary {
     background-color: #8a2be2 !important;
     color: #fff !important;
     border: none;
-    padding: 14px 28px;
+    padding: 12px 24px;
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: background-color 0.2s, box-shadow 0.2s;
   }
 
   .btn-primary:hover {
     background-color: #9d4edd !important;
-    box-shadow: 0 0 20px rgba(138, 43, 226, 0.8) !important;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.6) !important;
   }
 
-  .social-links { display: flex; gap: 10px; margin-top: 15px; justify-content: center; }
-  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 0.9rem; font-weight: bold; color: #fff; }
-  .btn-youtube { background-color: #ff0000; }
-  .btn-telegram { background-color: #24a1de; }
-  .code-box { background-color: #050508; padding: 12px; border-radius: 8px; font-family: monospace; font-size: 1rem; color: #c084fc; border: 1px dashed #4c1d95; margin: 15px 0; letter-spacing: 0.5px; }
+  /* Особая кнопка перехода к кейсам */
+  .btn-game-page {
+    background: linear-gradient(135deg, #f39c12, #e67e22) !important;
+    color: #fff !important;
+    border: none;
+    padding: 16px 30px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(243, 156, 18, 0.4);
+    margin-bottom: 25px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-game-page:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(243, 156, 18, 0.8);
+  }
+
+  .social-links { display: flex; justify-content: center; gap: 15px; }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 0.95rem; font-weight: bold; }
+  .btn-youtube { background-color: #ff0000 !important; color: #fff !important; }
+  .btn-youtube:hover { background-color: #cc0000 !important; box-shadow: 0 0 15px rgba(255, 0, 0, 0.4) !important; }
+  .btn-telegram { background-color: #24a1de !important; color: #fff !important; }
+  .btn-telegram:hover { background-color: #1d82b3 !important; box-shadow: 0 0 15px rgba(36, 161, 222, 0.4) !important; }
+
+  .code-box {
+    background-color: #050508 !important;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 1rem;
+    color: #c084fc !important; 
+    border: 1px dashed #4c1d95 !important;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+  }
+
+  .specs-list { text-align: left; list-style: none; padding: 0; margin: 0; }
+  .specs-list li { padding: 10px 0; border-bottom: 1px solid #1f1235 !important; font-size: 0.95rem; }
+  .specs-list li strong { color: #a78bfa !important; }
+  .specs-list li:last-child { border-bottom: none; }
+  .footer { text-align: center; color: #4c1d95 !important; font-size: 0.85rem; padding: 20px 0; }
 </style>
 
 <div class="bg-lines">
@@ -239,99 +150,73 @@
 </div>
 
 <div class="container">
-  <!-- ШАПКА -->
+  <!-- ШАПКА САЙТА -->
   <header class="header">
-    <div class="logo-area">
-      <h1>illuzzzion | PUBG Mobile</h1>
-    </div>
-    <div class="stats-widgets">
-      <div class="balance-box">
-        <i class="fas fa-coins coin-icon"></i>
-        <span id="balance-val">0</span>
-      </div>
+    <h1>illuzzzion | PUBG Mobile</h1>
+    <p class="subtitle">Актуальные настройки и коды управления. Обновлено сегодня!</p>
+    
+    <div class="social-links">
+      <a href="https://youtube.com" target="_blank" class="btn-secondary btn-youtube"><i class="fab fa-youtube"></i> YouTube канал</a>
+      <a href="https://t.me" target="_blank" class="btn-secondary btn-telegram"><i class="fab fa-telegram-plane"></i> Telegram канал</a>
     </div>
   </header>
 
-  <!-- СЕТКА САЙТА -->
-  <div class="main-grid">
-    
-    <!-- ЛЕВАЯ КОЛОНКА: КЕЙСЫ И НАСТРОЙКИ -->
-    <div class="left-column">
-      
-      <!-- ЗОНА АНИМАЦИИ КЕЙСА -->
-      <div class="roulette-zone" id="roulette-box">
-        <h3 id="roulette-status">Вскрытие контейнера Metro Royale...</h3>
-        <div class="drop-display" id="drop-result">❓❓❓</div>
+  <!-- КНОПКА ПЕРЕХОДА НА СТРАНИЦУ КЕЙСОВ -->
+  <a href="cases.html" class="btn-game-page">
+    <i class="fas fa-box-open"></i> 🎁 Открыть Кейсы Metro Royale (Топ Лидеров)
+  </a>
+
+  <!-- КОДЫ -->
+  <main>
+    <section class="card">
+      <div class="card-icon" style="font-size:40px; text-align:center; margin-bottom:10px;">🎮</div>
+      <h2 style="text-align:center;">Код раскладки</h2>
+      <p style="color:#94a3b8; text-align:center;">Играю в 5 пальцев + гироскоп. Девайс: iPhone 13 Pro Max.</p>
+      <div class="code-box" style="text-align:center;">
+        <span id="layout-code">1-7660-0000-5593-1176-416</span>
       </div>
+      <button class="btn-primary" onclick="copyCode('layout-code', this)">Копировать код раскладки</button>
+    </section>
 
-      <!-- БЛОК ГЛАВНОГО КЕЙСА MK14 -->
-      <div class="card">
-        <h2>📦 Секретный Ящик: Эксклюзив MK14</h2>
-        <p style="color:#94a3b8; font-size: 0.95rem;">Официальный кейс стоимостью <strong style="color:#2ecc71;">1.600.000 Метровалюты</strong>. Внутри содержатся модификации винтовки MK14 только наивысшего качества!</p>
-        
-        <div class="case-zone-center">
-          <div class="case-card-huge">
-            <span class="case-icon-huge">🧰</span>
-            <h3>Фирменный Кейс MK14</h3>
-            <p style="color:#a78bfa; font-size:0.85rem;">Шанс выпадения Высшего качества: 5%</p>
-            <p class="case-price-tag">2,500 Монет 💰</p>
-            <button class="btn-primary" onclick="openMk14Case()">Открыть кейс</button>
-          </div>
-        </div>
+    <section class="card">
+      <div class="card-icon" style="font-size:40px; text-align:center; margin-bottom:10px;">🎯</div>
+      <h2 style="text-align:center;">Чувствительность</h2>
+      <p style="color:#94a3b8; text-align:center;">Настройки сенсы под гироскоп (плавная стрельба на зажимах).</p>
+      <div class="code-box" style="text-align:center;">
+        <span id="sens-code">1-7690-4437-7972-9788-544</span>
       </div>
+      <button class="btn-primary" onclick="copyCode('sens-code', this)">Копировать код чувствительности</button>
+    </section>
 
-      <!-- НАСТРОЙКИ (Ваши коды) -->
-      <div class="card">
-        <h2>🎮 Актуальные коды управления</h2>
-        <div class="code-box"><span id="layout-code">1-7660-0000-5593-1176-416</span></div>
-        <button class="btn-primary" onclick="copyText('layout-code', this)">Копировать раскладку (5 пальцев)</button>
+    <section class="card">
+      <div class="card-icon" style="font-size:40px; text-align:center; margin-bottom:10px;">⚡</div>
+      <h2 style="text-align:center;">Графика и FPS</h2>
+      <ul class="specs-list">
+        <li><strong>Графика:</strong> Плавно</li>
+        <li><strong>Частота кадров:</strong> 120 FPS</li>
+        <li><strong>Стиль:</strong> Насыщенный</li>
+        <li><strong>Сглаживание:</strong> Выкл</li>
+      </ul>
+    </section>
+  </main>
 
-        <div class="code-box" style="margin-top: 20px;"><span id="sens-code">1-7690-4437-7972-9788-544</span></div>
-        <button class="btn-primary" onclick="copyText('sens-code', this)">Копировать чувствительность (Гироскоп)</button>
-      </div>
-    </div>
-
-    <!-- ПРАВАЯ КОЛОНКА: ТОП И ИНВЕНТАРЬ -->
-    <div class="right-column">
-      <!-- ТАБЛИЦА ЛИДЕРОВ -->
-      <div class="card">
-        <h2>🏆 ТОП-5 Лидеров</h2>
-        <ul class="leaderboard-list" id="leaderboard-root">
-          <li class="leaderboard-item">Загрузка топа...</li>
-        </ul>
-      </div>
-
-      <!-- ИНВЕНТАРЬ ИГРОКА -->
-      <div class="card">
-        <h2>🎒 Склад Оружия (MK14)</h2>
-        <p style="color:#94a3b8; font-size:0.85rem;">Все ваши модификации из ящика за 1.6 млн.</p>
-        <div class="inventory-box" id="inventory-root">
-          <span style="color:#64748b; font-size:0.9rem; grid-column: 1/-1; text-align: center;">Склад пуст...</span>
-        </div>
-      </div>
-
-      <!-- СОЦСЕТИ -->
-      <div class="card" style="text-align:center;">
-        <h2>Мои каналы</h2>
-        <div class="social-links">
-          <a href="https://youtube.com" target="_blank" class="btn-secondary btn-youtube"><i class="fab fa-youtube"></i> YouTube</a>
-          <a href="https://t.me" target="_blank" class="btn-secondary btn-telegram"><i class="fab fa-telegram-plane"></i> Telegram</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
+  <footer class="footer">
+    <p>© 2026 illuzzzion. Подписывайтесь на каналы, чтобы не пропустить новые ролики!</p>
+  </footer>
 </div>
 
-<!-- ЛОГИКА САЙТА И СВЯЗЬ С СЕРВЕРОМ -->
 <script>
-  const SERVER_URL = 'https://onrender.com';
-  
-  let currentUser = {
-    id: localStorage.getItem('user_id') || Math.floor(Math.random() * 1000000),
-    name: localStorage.getItem('user_name') || 'Боец_' + Math.floor(Math.random() * 100)
-  };
-  localStorage.setItem('user_id', currentUser.id);
-  localStorage.setItem('user_name', currentUser.name);
+function copyCode(elementId, button) {
+  const codeText = document.getElementById(elementId).innerText;
+  navigator.clipboard.writeText(codeText).then(() => {
+    const originalText = button.innerText;
+    button.innerText = "Скопировано! ✓";
+    button.style.backgroundColor = "#2ecc71"; 
+    setTimeout(() => {
+      button.innerText = originalText;
+      button.style.backgroundColor = "#8a2be2"; 
+    }, 2000);
+  });
+}
+</script>
 
-  // Таблица редкости только для модификаций MK14 (похоже на оригинальное Metro Royale)
